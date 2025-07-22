@@ -6,6 +6,10 @@ jobs:
   laravel-tests:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate APP_KEY
+        run: php artisan key:generate
+        env:
+        APP_KEY: base64:SomeGeneratedAppKey
       - uses: actions/checkout@v3
       - name: Install PHP
         uses: shivammathur/setup-php@v2
