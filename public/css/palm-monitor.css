@@ -1,0 +1,331 @@
+/* Palm Monitor CSS Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    background: #006838;
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #27ae60;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 90px);
+    position: relative;
+}
+
+.sidebar {
+    width: 250px;
+    background: #f8f9fa;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.tool-group {
+    margin-bottom: 25px;
+}
+
+.tool-group h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tool-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-align: left;
+}
+
+.tool-btn:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    transform: translateY(-1px);
+}
+
+.tool-btn.active {
+    background: #2196f3;
+    color: white;
+    border-color: #2196f3;
+}
+
+.tool-btn i {
+    width: 16px;
+    text-align: center;
+}
+
+.file-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file-input-wrapper input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.export-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.export-btn {
+    padding: 8px 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+.export-btn:hover {
+    background: #2980b9;
+}
+
+#map-container {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#infoForm {
+    display: none;
+    padding: 20px;
+    background: white;
+    border-top: 2px solid #3498db;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.form-grid input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-grid input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-actions button:first-child {
+    background: #27ae60;
+    color: white;
+}
+
+.form-actions button:first-child:hover {
+    background: #219a52;
+}
+
+.form-actions button:last-child {
+    background: #3498db;
+    color: white;
+}
+
+.form-actions button:last-child:hover {
+    background: #2980b9;
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.nav-button {
+    width: 90%;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border: none;
+    background: linear-gradient(135deg, #006838 0%, #A1B593 100%);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.nav-button:hover {
+    background-color: #fcfffc;
+}
+
+#coordinates {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #map-container {
+        height: calc(100vh - 290px);
+    }
+}
