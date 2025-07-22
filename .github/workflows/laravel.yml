@@ -1,6 +1,10 @@
-name: Laravel Tests
+name: Laravel CI
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   laravel-tests:
@@ -13,11 +17,12 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: 8.2
+        extensions: mbstring, bcmath, xml
 
-    - name: Install dependencies
-      run: composer install --no-progress --no-suggest --prefer-dist
+    - name: Install Composer dependencies
+      run: composer install --no-progress --prefer-dist
 
-    - name: Set environment
+    - name: Set up environment
       run: |
         cp .env.example .env
         php artisan key:generate
